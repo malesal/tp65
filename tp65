@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int ContarIslotes(string frase);
+
+int main() {
+    string entrada1 = "abc";
+    string entrada2 = "abcb";
+    
+    cout << ContarIslotes(entrada1) << endl; 
+    cout << ContarIslotes(entrada2) << endl; 
+    
+    return 0;
+}  int count = 0;
+   
+   int ContarIslotes(string frase) {
+   int length = frase.length();
+    
+    for (int i = 1; i < length - 1; ++i) {
+        if (frase[i] != frase[i - 1] && frase[i] != frase[i + 1] && frase[i - 1] == frase[i + 1]) {
+            count++;
+        }
+    }
+    
+    return count;
+}
